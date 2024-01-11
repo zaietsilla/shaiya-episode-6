@@ -1,8 +1,12 @@
 #pragma once
 #include <vector>
+#define DLL_EXPORT
 
 void Main();
+
+#ifdef DLL_EXPORT
 extern "C" __declspec(dllexport) void DllExport();
+#endif
 
 using CharId = unsigned long;
 inline std::vector<CharId> g_users{};
